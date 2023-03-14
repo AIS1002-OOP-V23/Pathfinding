@@ -9,7 +9,7 @@ add_library(pathfinding INTERFACE
         "${includeDir}/pathfinding/Heuristic.hpp"
         "${includeDir}/pathfinding/Path.hpp"
         "${includeDir}/pathfinding/PathFinder.hpp"
-        "${includeDir}/pathfinding/TilebasedMap.hpp"
+        "${includeDir}/pathfinding/TileBasedMap.hpp"
 
         "${includeDir}/pathfinding/heuristics/ClosestHeuristic.hpp"
         "${includeDir}/pathfinding/heuristics/ClosestSquaredHeuristic.hpp"

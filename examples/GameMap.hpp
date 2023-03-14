@@ -14,7 +14,7 @@ class GameMap : public TileBasedMap {
 public:
     explicit GameMap(std::vector<std::string> data) : data_(std::move(data)) {
 
-        height_ = static_cast<int>(this->data_.size());
+        height_ = data_.size();
 
         // check that width is consistent
         unsigned width = data_[0].size();
@@ -27,24 +27,29 @@ public:
     }
 
     [[nodiscard]] unsigned int width() const override {
+
         return width_;
     }
 
     [[nodiscard]] unsigned int height() const override {
+
         return height_;
     }
 
     [[nodiscard]] char get(int x, int y) const {
+
         return data_[y][x];
     }
 
     [[nodiscard]] bool blocked(const Coordinate &v) const override {
+
         char c = get(v.x, v.y);
         bool blocked = (c == '0');
         return blocked;
     }
 
     float getCost(const Coordinate &start, const Coordinate &target) override {
+
         return 1;
     }
 

@@ -194,10 +194,12 @@ private:
     bool allowDiagMovement = true;
 
     static bool contains(const std::vector<Node *> &list, Node *node) {
+
         return std::find(list.begin(), list.end(), node) != std::end(list);
     }
 
     static void removeFrom(std::vector<Node *> &list, Node *node) {
+
         list.erase(std::remove(list.begin(), list.end(), node), list.end());
     }
 
@@ -210,6 +212,7 @@ private:
 	 * @return True if the location is valid
 	 */
     [[nodiscard]] bool isValidLocation(const Coordinate &c1, const Coordinate &c2) const {
+
         bool invalid = (c2.x < 0) || (c2.y < 0) || (c2.x >= map->width()) ||
                        (c2.y >= map->height());
 
@@ -229,6 +232,7 @@ private:
 	 * @return The cost of movement through the given tile
 	 */
     [[nodiscard]] float getMovementCost(const Coordinate &s, const Coordinate &t) const {
+
         return map->getCost(s, t);
     }
 
@@ -242,6 +246,7 @@ private:
 	 * @return The heuristic cost assigned to the tile
 	 */
     float getHeuristicCost(const Coordinate &s, const Coordinate &t) {
+
         return heuristic->getCost(map.get(), s, t);
     }
 };
